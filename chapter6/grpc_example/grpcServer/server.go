@@ -4,7 +4,7 @@ import (
 	"log"
 	"net"
 
-	pb "github.com/narenaryan/datafiles"
+	pb "github.com/jessequinn/chapter6/grpc_example/datafiles"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
@@ -38,4 +38,3 @@ func main() {
 		log.Fatalf("Failed to serve: %v", err)
 	}
 }
-

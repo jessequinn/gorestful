@@ -1,0 +1,39 @@
+settings:
+    files:
+        outputs:
+            status: true
+            path: ''
+            name: .r.outputs.log
+        logs:
+            status: true
+            path: ''
+            name: .r.logs.log
+        errors:
+            status: true
+            path: ''
+            name: .r.errors.log
+    legacy:
+        force: false
+        interval: 0s
+schema:
+    -   name: server
+#        path: grpc_example/grpcServer
+        path: serverPush/grpcServer
+        commands:
+            install:
+                status: true
+                method: go build -o ../../build/server
+            run:
+                status: true
+                method: build/server
+        watcher:
+            extensions:
+                - go
+            paths:
+                - /
+            ignore:
+                paths:
+                    - .git
+                    - .realize
+                    - .idea
+                    - docker

@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-    "encoding/json"
-	pb "github.com/narenaryan/protofiles"
+	"encoding/json"
+	pb "github.com/jessequinn/chapter6/protofiles"
 )
 
 func main() {

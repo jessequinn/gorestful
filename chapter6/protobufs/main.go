@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/golang/protobuf/proto"
-	pb "github.com/narenaryan/protofiles"
+	pb "github.com/jessequinn/chapter6/protofiles"
 )
 
 func main() {

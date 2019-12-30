@@ -6,7 +6,7 @@ import (
 	"net"
 	"time"
 
-	pb "github.com/narenaryan/serverPush/datafiles"
+	pb "github.com/jessequinn/chapter6/serverPush/datafiles"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )

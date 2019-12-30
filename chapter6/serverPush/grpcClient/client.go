@@ -4,7 +4,7 @@ import (
 	"io"
 	"log"
 
-	pb "github.com/narenaryan/serverPush/datafiles"
+	pb "github.com/jessequinn/chapter6/serverPush/datafiles"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 )

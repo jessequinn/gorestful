@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	pb "github.com/narenaryan/datafiles"
+	pb "github.com/jessequinn/chapter6/grpc_example/datafiles"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 )
