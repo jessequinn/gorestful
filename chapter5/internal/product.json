@@ -9,7 +9,7 @@
 		manufacturer: "HighLander",
 		color: "light blue",
 		mfg_date: new Date(2017, 4, 1),
-		size: 40 
+		size: 40
 	},
 	reviews: 3,
 	pricing: {

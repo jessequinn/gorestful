@@ -1,0 +1,38 @@
+settings:
+    files:
+        outputs:
+            status: true
+            path: ''
+            name: .r.outputs.log
+        logs:
+            status: true
+            path: ''
+            name: .r.logs.log
+        errors:
+            status: true
+            path: ''
+            name: .r.errors.log
+    legacy:
+        force: false
+        interval: 0s
+schema:
+    -   name: movieapi
+        path: cmd/movieapi
+        commands:
+            install:
+                status: true
+                method: go build -o ../../build/movieapi
+            run:
+                status: true
+                method: build/movieapi
+        watcher:
+            extensions:
+                - go
+            paths:
+                - /
+            ignore:
+                paths:
+                    - .git
+                    - .realize
+                    - .idea
+                    - docker

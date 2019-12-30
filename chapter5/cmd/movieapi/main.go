@@ -7,12 +7,13 @@ import (
 	"net/http"
 	"time"
 
+	//"github.com/globalsign/mgo"
 	"github.com/gorilla/mux"
 	mgo "gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 )
 
-// DB stores the database session imformation. Needs to be initialized once
+// DB stores the database session information. Needs to be initialized once
 type DB struct {
 	session    *mgo.Session
 	collection *mgo.Collection
@@ -45,7 +46,6 @@ func (db *DB) GetMovie(w http.ResponseWriter, r *http.Request) {
 		response, _ := json.Marshal(movie)
 		w.Write(response)
 	}
-
 }
 
 // PostMovie adds a new movie to our MongoDB collection
@@ -97,7 +97,7 @@ func (db *DB) DeleteMovie(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	session, err := mgo.Dial("127.0.0.1")
+	session, err := mgo.Dial("mongo1")
 	c := session.DB("appdb").C("movies")
 	db := &DB{session: session, collection: c}
 	if err != nil {
@@ -113,7 +113,7 @@ func main() {
 	r.HandleFunc("/v1/movies/{id:[a-zA-Z0-9]*}", db.DeleteMovie).Methods("DELETE")
 	srv := &http.Server{
 		Handler: r,
-		Addr:    "127.0.0.1:8000",
+		Addr:    ":8000",
 		// Good practice: enforce timeouts for servers you create!
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout:  15 * time.Second,
